@@ -23,12 +23,16 @@
         <div class="form-row align-items-center">
             <div class="col-auto">
                 <label class="sr-only" for="inlineFormInput">Name</label>
-                <input id="nameValue" type="text" class="form-control mb-2" id="inlineFormInput" placeholder="Cinema Name">
+                <input id="cinemaName" type="text" class="form-control mb-2"
+                       placeholder="Cinema Name">
                 <input type="date" id="date" placeholder="Date" name="date">
 
             </div>
             <div class="col-auto">
-                <input id="bttnSubmit" type="button" class="btn btn-primary mb-2" onclick="app." value = "get Functions" > </input>
+                <button id="bttn" type="button" class="btn btn-primary mb-2"
+                        onclick="app.actualizarListadodeFunciones($('#cinemaName').val(),$('#date').val())"
+                        value="get Functions">Submit
+                </button>
             </div>
         </div>
 
@@ -38,18 +42,17 @@
             <div class="grid-item">
 
                 <div class="card" style="width: 25rem;">
-                    <div class="card-header">
-                        Table in a card
-                    </div>
-                    <table class="card-table table">
+                    <table class="table table-striped table-bordered table-hover table-dark" id="tablaMovies">
                         <thead>
                         <tr>
-                            <th scope="col">Blueprint name</th>
-                            <th scope="col">Number of points</th>
-                            <th scope="col" > Open </th>
+                            <th scope="col">Name</th>
+                            <th scope="col">Genre</th>
+                            <th scope="col">Hour</th>
+                            <th scope="col">Availability</th>
                         </tr>
                         </thead>
-                        <tbody id = "bpTable"></tbody>
+                        <tbody>
+                        </tbody>
                     </table>
                 </div>
                 <h6 id="totalPoints" class="display-7"></h6>
@@ -57,17 +60,15 @@
             </div>
 
             <div class="grid-item">
-                <button type="button" class="btn btn-warning btn-lg btn-block" onclick="">New Blueprint</button>
+                <button type="button" class="btn btn-warning btn-lg btn-block"
+                        onclick="app.dibujarObjetos($('#cinemaName').val(),$('#date').val())">New Blueprint
+                </button>
                 <h3 id="currentBlueprint" class="display-6"></h3>
-                <canvas id="myCanvas" width="500" height="500" style="border:1px solid #000000;">
+                <canvas id="myCanvas" width="700" height="500" style="border:1px solid #000000;">
                 </canvas>
 
                 <button type="button" class="btn btn-success btn-lg btn-block" onclick="">Save/Update</button>
                 <button type="button" class="btn btn-danger btn-lg btn-block" onclick="">Delete</button>
-
-
-
-
             </div>
         </div>
 
