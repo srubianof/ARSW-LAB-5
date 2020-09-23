@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Cinema Chido</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <script src="/webjars/jquery/3.1.0/jquery.min.js"></script>
+
+    <script src="js/apimock.js"></script>
+    <script src="js/app.js"></script>
+    <link rel="stylesheet"
+          href="/webjars/bootstrap/3.3.7/css/bootstrap.min.css"/>
+</head>
+<body>
+<nav class="navbar navbar-light bg-light">
+    <span class="navbar-brand mb-0 h1">Cinema Bookings</span>
+</nav>
+</br>
+
+<div class="container-fluid">
+    <div style="float: left">
+        <div class="form-row align-items-center">
+            <div class="col-auto">
+                <label class="sr-only" for="inlineFormInput">Name</label>
+                <input id="nameValue" type="text" class="form-control mb-2" id="inlineFormInput" placeholder="Cinema Name">
+                <input type="date" id="date" placeholder="Date" name="date">
+
+            </div>
+            <div class="col-auto">
+                <input id="bttnSubmit" type="button" class="btn btn-primary mb-2" onclick="app." value = "get Functions" > </input>
+            </div>
+        </div>
+
+        </br>
+        <h3 id="authorLabel" class="display-6"></h3>
+        <div class="grid-container">
+            <div class="grid-item">
+
+                <div class="card" style="width: 25rem;">
+                    <div class="card-header">
+                        Table in a card
+                    </div>
+                    <table class="card-table table">
+                        <thead>
+                        <tr>
+                            <th scope="col">Blueprint name</th>
+                            <th scope="col">Number of points</th>
+                            <th scope="col" > Open </th>
+                        </tr>
+                        </thead>
+                        <tbody id = "bpTable"></tbody>
+                    </table>
+                </div>
+                <h6 id="totalPoints" class="display-7"></h6>
+
+            </div>
+
+            <div class="grid-item">
+                <button type="button" class="btn btn-warning btn-lg btn-block" onclick="">New Blueprint</button>
+                <h3 id="currentBlueprint" class="display-6"></h3>
+                <canvas id="myCanvas" width="500" height="500" style="border:1px solid #000000;">
+                </canvas>
+
+                <button type="button" class="btn btn-success btn-lg btn-block" onclick="">Save/Update</button>
+                <button type="button" class="btn btn-danger btn-lg btn-block" onclick="">Delete</button>
+
+
+
+
+            </div>
+        </div>
+
+    </div>
+
+</div>
+</body>
+</html>
