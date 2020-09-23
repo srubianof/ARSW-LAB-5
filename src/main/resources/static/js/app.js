@@ -1,4 +1,5 @@
 var app = (function () {
+        var api = apimock;
         var nombreCine = "";
         var fechaFuncion = "";
         var listaFunciones = [];
@@ -46,7 +47,7 @@ var app = (function () {
             dibujarObjetos(nombre, fecha, nombrePelicula) {
                 console.log(fecha)
                 console.log(nombrePelicula)
-                apimock.getFunctionsByCinemaAndDate(nombre, fecha, (funciones) => {
+                api.getFunctionsByCinemaAndDate(nombre, fecha, (funciones) => {
                     for (const funcion of funciones) {
                         if (funcion.movie.name === nombrePelicula) {
                             dibujarObjetos(funcion.seats);
@@ -59,10 +60,10 @@ var app = (function () {
             actualizarListadodeFunciones(nombre, fecha) {
                 this.cambiarFecha(fecha);
                 this.cambiarNombreCine(nombre);
-                apimock.getFunctionsByCinemaAndDate(nombre, fecha, mapObjetos);
+                api.getFunctionsByCinemaAndDate(nombre, fecha, mapObjetos);
             },
             consultarAsientosDisponibles(nombreCine, fecha, nombrePelicula) {
-                apimock.getFunctionsByCinemaAndDate(nombreCine, fecha, dibujarObjetos);
+                api.getFunctionsByCinemaAndDate(nombreCine, fecha, dibujarObjetos);
             },
             cambiarNombreCine(nombre) {
                 nombreCine = nombre;
