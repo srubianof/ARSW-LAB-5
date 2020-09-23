@@ -78,7 +78,7 @@ public class InMemoryCinemaPersistence implements CinemaPersitence {
         List<CinemaFunction> functionsOfOurCinema = cinemaTicket.getFunctions();
 
         for (CinemaFunction cf : functionsOfOurCinema) {
-            if (cf.getDate().equals(date)) {
+            if (cf.getDate().contains(date)) {
                 functions.add(cf);
             }
         }

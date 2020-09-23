@@ -1,5 +1,5 @@
 var app = (function () {
-        var api = apimock;
+        var api = apiclient;
         var nombreCine = "";
         var fechaFuncion = "";
         var listaFunciones = [];
